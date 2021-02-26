@@ -1,10 +1,24 @@
 import User from '../models/User';
 import * as Yup from 'yup';
+import File from '../models/File';
 
 class UserController {
 	async show(req, res) {
-		const users = await User.findAll();
-		return res.json(users);
+		const user = await User.findOne({
+			where: {
+				id: req.userId,
+			},
+			attributes: ['email', 'name'],
+			include: [
+				{
+					model: File,
+					as: 'avatar',
+					attributes: ['name', 'path', 'url'],
+				},
+			],
+		});
+
+		return res.json(user);
 	}
 
 	async create(req, res) {

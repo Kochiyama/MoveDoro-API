@@ -6,8 +6,8 @@ This is the API for the MoveDoro App
 
 - [x] User Creation
 - [x] Database Connection
-- [ ] User Update
-- [ ] Authentication with JWT
+- [x] User Update
+- [x] Authentication with JWT
 
 # Routes
 
@@ -18,3 +18,4 @@ AUTH MIDDLEWARE
 
 GET /user/:id - send user info
 PUT /users - update user data
+POST /files - Upload images
