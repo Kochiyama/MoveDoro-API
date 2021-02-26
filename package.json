@@ -1,0 +1,20 @@
+{
+  "name": "movedoro-api",
+  "version": "1.0.0",
+  "description": "Movedoro app API",
+  "main": "index.js",
+  "repository": "https://github.com/Kochiyama/MoveDoro-API.git",
+  "author": "kochiyama <marcelokochiyama2210@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "pg": "^8.5.1",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^6.5.0",
+    "sequelize-cli": "^6.2.0",
+    "sucrase": "^3.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
