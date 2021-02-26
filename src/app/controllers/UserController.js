@@ -8,7 +8,13 @@ class UserController {
 			where: {
 				id: req.userId,
 			},
-			attributes: ['email', 'name'],
+			attributes: [
+				'email',
+				'name',
+				'level',
+				'current_experience',
+				'challenges_completed',
+			],
 			include: [
 				{
 					model: File,
