@@ -9,6 +9,9 @@ class User extends Model {
 				email: Sequelize.STRING,
 				password: Sequelize.VIRTUAL,
 				password_hash: Sequelize.STRING,
+				level: Sequelize.INTEGER,
+				current_experience: Sequelize.INTEGER,
+				challenges_completed: Sequelize.INTEGER,
 			},
 			{
 				sequelize,

@@ -59,6 +59,9 @@ class UserController {
 		const schema = Yup.object().shape({
 			email: Yup.string().email().required(),
 			name: Yup.string(),
+			level: Yup.number(),
+			current_experience: Yup.number(),
+			challenges_completed: Yup.number(),
 			oldPassword: Yup.string(),
 			password: Yup.string()
 				.min(6)
@@ -92,13 +95,23 @@ class UserController {
 			return res.status(401).json({ error: 'Password does not match' });
 		}
 
-		const { id, name, avatar_id } = await user.update(req.body);
+		const {
+			id,
+			name,
+			avatar_id,
+			level,
+			current_experience,
+			challenges_completed,
+		} = await user.update(req.body);
 
 		return res.json({
 			id,
 			name,
 			email,
 			avatar_id,
+			level,
+			current_experience,
+			challenges_completed,
 		});
 	}
 }
