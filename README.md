@@ -4,8 +4,8 @@ This is the API for the MoveDoro App
 
 # Features Roadmap
 
-- [ ] User Creation
-- [ ] Database Connection
+- [x] User Creation
+- [x] Database Connection
 - [ ] User Update
 - [ ] Authentication with JWT
 
