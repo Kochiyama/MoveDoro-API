@@ -22,6 +22,8 @@ router.use(authMiddleware);
 
 // auth required
 router.get('/users', UserController.show);
+router.put('/users', UserController.update);
+
 router.post('/files', upload.single('file'), FileController.create);
 
 export default router;
