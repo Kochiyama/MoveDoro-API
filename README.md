@@ -8,6 +8,7 @@ This is the API for the MoveDoro App
 - [x] Database Connection
 - [x] User Update
 - [x] Authentication with JWT
+- [x] Leaderboards
 
 # Routes
 
@@ -19,3 +20,4 @@ AUTH MIDDLEWARE
 GET /user/:id - send user info
 PUT /users - update user data
 POST /files - Upload images
+GET /leaderboard

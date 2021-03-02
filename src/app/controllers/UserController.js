@@ -57,7 +57,7 @@ class UserController {
 
 	async update(req, res) {
 		const schema = Yup.object().shape({
-			email: Yup.string().email().required(),
+			email: Yup.string().email(),
 			name: Yup.string(),
 			level: Yup.number(),
 			current_experience: Yup.number(),
@@ -83,7 +83,7 @@ class UserController {
 
 		const user = await User.findByPk(req.userId);
 
-		if (user.email !== email) {
+		if (email && user.email !== email) {
 			const emailAlreadyUsed = await User.findOne({ where: { email } });
 
 			if (emailAlreadyUsed) {

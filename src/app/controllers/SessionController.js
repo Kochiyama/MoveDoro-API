@@ -13,7 +13,10 @@ class SessionController {
 		});
 
 		if (!(await schema.isValid(req.body))) {
-			return res.status(400).json({ error: 'Validation Fails' });
+			return res.status(400).json({
+				title: 'Dados inválidos',
+				message: 'Verifique o email e a senha digitados.',
+			});
 		}
 
 		const { email, password } = req.body;
@@ -21,11 +24,17 @@ class SessionController {
 		const user = await User.findOne({ where: { email } });
 
 		if (!user) {
-			return res.status(401).json({ error: 'User not found' });
+			return res.status(401).json({
+				title: 'Email não registrado',
+				message: 'Crie sua conta gratuitamente.',
+			});
 		}
 
 		if (!(await user.checkPassword(password))) {
-			return res.status(401).json({ error: 'Invalid password' });
+			return res.status(401).json({
+				title: 'Senha incorreta',
+				message: 'Esqueceu a senha? clique no link no final da pagina.',
+			});
 		}
 
 		const { id, name } = user;

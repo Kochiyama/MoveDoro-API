@@ -1,6 +1,7 @@
 import express from 'express';
 import router from './routes';
 import path from 'path';
+import cors from 'cors';
 import './database';
 
 class App {
@@ -17,6 +18,7 @@ class App {
 			'/files',
 			express.static(path.resolve(__dirname, '..', 'tmp', 'uploads'))
 		);
+		this.server.use(cors());
 	}
 
 	routes() {
